@@ -5,6 +5,9 @@
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
     "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false
+    },
     "timezone": "-05:00"
   },
   "test": {
@@ -13,6 +16,9 @@
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
     "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false
+    },
     "timezone": "-05:00"
   },
   "production": {
@@ -21,6 +27,9 @@
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
     "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false
+    },
     "timezone": "-05:00"
   }
 }
