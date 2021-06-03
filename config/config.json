@@ -4,32 +4,20 @@
     "password": null,
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": true
-    },
-    "timezone": "-05:00"
+    "dialect": "postgres"
   },
   "test": {
     "username": "tkdsxsye",
     "password": null,
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false
-    },
-    "timezone": "-05:00"
+    "dialect": "postgres"
   },
   "production": {
     "username": "tkdsxsye",
     "password": null,
     "database": "tkdsxsye",
     "host": "batyr.db.elephantsql.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false
-    },
-    "timezone": "-05:00"
+    "dialect": "postgres"
   }
 }
