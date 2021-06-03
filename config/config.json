@@ -6,7 +6,7 @@
     "host": "batyr.db.elephantsql.com",
     "dialect": "postgres",
     "dialectOptions": {
-      "useUTC": false
+      "useUTC": true
     },
     "timezone": "-05:00"
   },
