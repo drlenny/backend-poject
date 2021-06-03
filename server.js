@@ -30,7 +30,6 @@ app.get('/', async (req, res) => {
     } catch (error){
         console.log(error);
     }
-
 })
 
 // app.get('/index', function(req, res){
@@ -143,4 +142,5 @@ app.post('/delete/:id', async (req, res) => {
 
 app.listen(port, function () {
     console.log(`Server started on ${port} succesfully`);
+    console.log("hello");
 });

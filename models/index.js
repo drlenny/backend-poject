@@ -12,9 +12,7 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, process.env.PASSWORD, {timezone: "+00:00"}, config);
-  sequelize.query('SELECT now() AS now;', {type: sequelize.QueryTypes.SELECT});
-  sequelize.query('SELECT createdAt FROM list;', {type: sequelize.QueryTypes.SELECT})
+  sequelize = new Sequelize(config.database, config.username, process.env.PASSWORD, config);
 }
 
 fs
