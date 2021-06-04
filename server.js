@@ -7,7 +7,7 @@ const path = require('path');
 const ejs = require('ejs');
 const moment = require('moment')
 
-app.use(express.static(path.join(__dirname, '/client')))
+app.use(express.static(path.join(__dirname, '/client/public')))
 app.set('views', path.join(__dirname, 'client/views'))
 app.set('view engine', 'ejs');
 
@@ -24,21 +24,15 @@ const pg = require('pg');
 
 
 app.get('/', async (req, res) => {
+    var now = moment(new Date())
+    console.log(now);
     try {
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        List.findAll().then(function (lists) {
-            lists = lists.map(function (list) {
-                list.createdAt = list.createdAt.getFullYear() + '-' +
-                    (list.createdAt.getMonth() < 9 ? '0' : '') +
-                    (list.createdAt.getMonth() + 1) + '-' + list.createdAt.getDate();
-                    return list
-            });
-            res.render('home', {
-                showLists: lists,
-                months: months
-            })
-        });
-
+        const lists = await List.findAll();
+        res.render('home', {
+            showLists: lists,
+            months: months
+        })
     } catch (error) {
         console.log(error);
     }
