@@ -5,6 +5,7 @@ const Sequelize = require('sequelize');
 const { List, Items } = require('./models');
 const path = require('path');
 const ejs = require('ejs');
+const moment = require('moment')
 
 app.use(express.static(path.join(__dirname, '/client')))
 app.set('views', path.join(__dirname, 'client/views'))
@@ -25,11 +26,19 @@ const pg = require('pg');
 app.get('/', async (req, res) => {
     try {
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        const lists = await List.findAll();
-        res.render('home', {
-            showLists: lists,
-            months: months
-        })
+        List.findAll().then(function (lists) {
+            lists = lists.map(function (list) {
+                list.createdAt = list.createdAt.getFullYear() + '-' +
+                    (list.createdAt.getMonth() < 9 ? '0' : '') +
+                    (list.createdAt.getMonth() + 1) + '-' + list.createdAt.getDate();
+                    return list
+            });
+            res.render('home', {
+                showLists: lists,
+                months: months
+            })
+        });
+
     } catch (error) {
         console.log(error);
     }
