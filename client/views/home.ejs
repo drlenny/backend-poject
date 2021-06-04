@@ -13,11 +13,10 @@
                     </div>
                     <div class="col-6 listHeading">
                         <h3 class="listHeading">
-                            <%= new Date(newList.createdAt).toString() %>
-                            <%= console.log(newList.createdAt.toString()) %>
-                            <%= console.log(new Date(newList.createdAt).toString()) %>
-                            <%= console.log(newList.createdAt) %>
-                            <%= console.log(newList.createdAt.toString()) %>
+                            <%= months[new Date(newList.createdAt).getMonth()] %>
+                            <%= new Date(newList.createdAt).getDate() %>
+                            <%= new Date(newList.createdAt).getFullYear() %>
+
                         </h3>
                     </div>
 

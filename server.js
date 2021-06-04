@@ -21,13 +21,16 @@ if (port == null || port == "") {
 
 const pg = require('pg');
 
+
 app.get('/', async (req, res) => {
-    try{
+    try {
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const lists = await List.findAll();
         res.render('home', {
-            showLists: lists
+            showLists: lists,
+            months: months
         })
-    } catch (error){
+    } catch (error) {
         console.log(error);
     }
 })
@@ -142,5 +145,4 @@ app.post('/delete/:id', async (req, res) => {
 
 app.listen(port, function () {
     console.log(`Server started on ${port} succesfully`);
-    console.log("hello");
 });
