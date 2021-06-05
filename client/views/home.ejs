@@ -11,13 +11,10 @@
                             <%= newList.title %>
                         </h3>
                     </div>
-                    <div class="col-6 listHeading">
-                        <h3 class="listHeading">
-                            <%= months[new Date(newList.createdAt).getMonth()] %>
-                            <%= new Date(newList.createdAt).getDate() %>
-                            <%= new Date(newList.createdAt).getFullYear() %>
-                            <%= console.log(newList.createdAt) %>
-                            <%= new Date(newList.createdAt).toTimeString() %>
+                    <div class="col-6 listHeading date">
+                        <input type="hidden" name="dateValue" class="dateValue" value="<%=newList.createdAt%>">
+                        <h3 class="listHeading showDate">
+
 
                         </h3>
                     </div>

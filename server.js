@@ -24,14 +24,11 @@ const pg = require('pg');
 
 
 app.get('/', async (req, res) => {
-    var now = moment(new Date())
-    console.log(now);
     try {
-        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        // var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const lists = await List.findAll();
         res.render('home', {
             showLists: lists,
-            months: months
         })
     } catch (error) {
         console.log(error);
