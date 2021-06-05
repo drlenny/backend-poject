@@ -30,7 +30,7 @@ $('.date').each(function(){
 
     var year = convertDate.getFullYear()
 
-    $(this).find('.showDate').text(convertDate.toLocaleString())
+    $(this).find('.showDate').text(new Date(values[index]).toLocaleString())
 
     // console.log(new Date(values[index]));
     // console.log(index);
