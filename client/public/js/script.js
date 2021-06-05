@@ -24,13 +24,13 @@ $('.date').each(function(){
 
     var convertDate = convertUTCDateToLocalDate(new Date(values[index]))
 
-    var month = months[convertDate.getMonth()]
+    var month = months[new Date(values[index]).getMonth()]
     
-    var day = convertDate.getDate()
+    var day = new Date(values[index]).getDate()
 
-    var year = convertDate.getFullYear()
+    var year = new Date(values[index]).getFullYear()
 
-    $(this).find('.showDate').text(new Date(values[index]).toLocaleString())
+    $(this).find('.showDate').text(`${month} ${day} ${year}`)
 
     // console.log(new Date(values[index]));
     // console.log(index);
